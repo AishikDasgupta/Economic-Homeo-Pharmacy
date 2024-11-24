@@ -1,0 +1,110 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Banner Section */
+.products-banner {
+    background-color: #283fa7;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.products-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.products-banner p {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+/* Categories Section */
+.categories {
+    padding: 40px 0;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    font-size: 2rem;
+    color: #283fa7;
+    margin-bottom: 10px;
+}
+
+.category p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Product Cards */
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h4 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #777;
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #283fa7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1a73e8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 1 0 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        flex: 1 0 100%;
+    }
+}
