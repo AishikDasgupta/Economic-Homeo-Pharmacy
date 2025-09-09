@@ -79,17 +79,43 @@
         <div class="row">
             <!-- Product Image -->
             <div class="col-md-6">
-                <img src="wetransfer_economic-product-catalogue_2024-11-21_0514/keratin.jpg" alt="Product Image" class="img-fluid rounded">
+                <div class="product-image-container mb-4">
+                    <img id="mainProductImage" src="" alt="Loading product image..." class="img-fluid rounded main-product-image">
+                </div>
+                <!-- Thumbnails will be added here by JavaScript -->
+                <div id="thumbnailContainer" class="d-flex mt-3"></div>
             </div>
             <div class="col-md-6 product-info">
-                <h1>EHP Calcarea Phosphorica</h1>
-                <div class="product-description">
-                    <p>EHP Calcarea Phosphorica is a nice remedy that supports bone health and calcium metabolism. 
-                       It's ideal for growing children, pregnant and lactating women, and the elderly. 
-                       It promotes strong bones and teeth, enhances calcium absorption, increases bone mineral density and supports a healthy nervous system. 
-                       While homeopathy stimulates the body's natural healing, consulting a healthcare professional for personalized advice is recommended.
+                <h1 id="productTitle" class="placeholder-glow">
+                    <span class="placeholder col-8"></span>
+                </h1>
+                <div class="product-description mb-4">
+                    <p class="lead placeholder-glow">
+                        <span class="placeholder col-12"></span>
+                        <span class="placeholder col-11"></span>
+                        <span class="placeholder col-10"></span>
                     </p>
-        </div>
+                </div>
+                
+                <!-- Price -->
+                <div class="price-section mb-4">
+                    <h3 id="productPrice" class="text-primary">₹0.00</h3>
+                </div>
+                
+                <!-- Quantity Selector -->
+                <div class="quantity-selector mb-4">
+                    <label for="quantity" class="form-label">Quantity:</label>
+                    <div class="input-group" style="max-width: 150px;">
+                        <button class="btn btn-outline-secondary" type="button" id="decreaseQty">-</button>
+                        <input type="number" class="form-control text-center" id="quantity" value="1" min="1">
+                        <button class="btn btn-outline-secondary" type="button" id="increaseQty">+</button>
+                    </div>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button id="addToCartBtn" class="btn btn-primary btn-lg w-100 mb-4">
+                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
 
             <!-- Tabbed Information Section -->
             <div class="row-md-6">
@@ -120,34 +146,43 @@
     <!-- Tab Content -->
     <div class="tab-content mt-4" id="infoTabsContent">
         <div class="tab-pane fade show active" id="indication" role="tabpanel" aria-labelledby="indication-tab">
-            <p><ul style="list-style-type:square">
-                <li><b>Pain Relief</b>: Alleviates various types of pain, including headaches, muscle aches, and joint pain.</li>
-                <li><b>Reduction:</b>Effectively reduces fever associated with common illnesses.</li>
-                <li><b>Inflammation Reduction:</b> Helps to decrease inflammation in the body.</li>
-                <li><b>Fast-Acting Relief:</b> Provides quick relief from discomfort and pain.</li>
-            </ul></p>
+            <div class="placeholder-glow">
+                <div class="d-flex flex-column gap-2">
+                    <span class="placeholder col-12"></span>
+                    <span class="placeholder col-11"></span>
+                    <span class="placeholder col-10"></span>
+                </div>
+            </div>
+            <ul id="benefitsList" class="list-unstyled"></ul>
         </div>
         <div class="tab-pane fade" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
-            <p><ul style="list-style-type:square">
-                <li><b>Paracetamol</b>: A pain reliever and fever reducer.</li>
-                <li><b>Ibuprofen</b>: A nonsteroidal anti-inflammatory drug (NSAID) that reduces pain and inflammation.</li>
-                <li><b>Caffeine</b>: Increases alertness and may enhance pain relief.</li>
-            </ul></p>
+            <div class="placeholder-glow">
+                <div class="d-flex flex-column gap-2">
+                    <span class="placeholder col-12"></span>
+                    <span class="placeholder col-11"></span>
+                </div>
+            </div>
+            <ul id="ingredientsList" class="list-unstyled"></ul>
         </div>
         <div class="tab-pane fade" id="dosage" role="tabpanel" aria-labelledby="dosage-tab">
-            <p><ul style="list-style-type:square">
-                <li><b>Adult Dosage</b>: Typically, two tablets every 4-6 hours as needed, not to exceed eight tablets in 24 hours.</li>
-                <li><b>Children's Dosage</b>: Consult a healthcare professional for appropriate dosage based on age and weight.</li>
-                <li><b>Overdose Warning</b>: Avoid exceeding the recommended dosage, as overdose can lead to serious health consequences.</li>
-            </ul></p>
+            <div class="placeholder-glow">
+                <div class="d-flex flex-column gap-2">
+                    <span class="placeholder col-12"></span>
+                    <span class="placeholder col-11"></span>
+                    <span class="placeholder col-10"></span>
+                </div>
+            </div>
+            <ul id="dosageList" class="list-unstyled"></ul>
         </div>
         <div class="tab-pane fade" id="safety" role="tabpanel" aria-labelledby="safety-tab">
-            <p><ul style="list-style-type:square">
-                <li><b>Side Effects</b>: Common side effects may include stomach upset, nausea, and dizziness.</li>
-                <li><b>Precautions</b>: Consult a healthcare professional before use if you have any underlying health conditions, are pregnant, or breastfeeding.</li>
-                <li><b>Storage</b>: Store in a cool, dry place, away from direct sunlight.</li>
-                <li><b>Expiration Date</b>: Check the expiration date on the packaging and discard expired medication.</li>
-            </ul></p>
+            <div class="placeholder-glow">
+                <div class="d-flex flex-column gap-2">
+                    <span class="placeholder col-12"></span>
+                    <span class="placeholder col-11"></span>
+                    <span class="placeholder col-10"></span>
+                </div>
+            </div>
+            <ul id="safetyList" class="list-unstyled"></ul>
         </div>
     </div>
 </section>
@@ -209,14 +244,28 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Product Details Script -->
+<script src="product-details.js"></script>
+
 <script>
     // Toggle Menu for Mobile
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navbarNav = document.querySelector('.navbar-nav');
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navbarNav = document.querySelector('.navbar-nav');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        navbarNav.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
+        if (mobileMenuBtn && navbarNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navbarNav.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+            });
+        }
+
+        // Initialize Bootstrap tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
     });
 </script>
 </body>

@@ -248,13 +248,42 @@ body {
 }
 
 /* Product Details Section */
-.product-details img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.product-details .product-image-container {
+    width: 450px;
+    height: 425px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Spacing for smaller screens */
+    margin: 0 auto 20px;
+    background-color: #f8f9fa;
+}
+
+.product-details .main-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Thumbnails container */
+#thumbnailContainer {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-details .product-image-container {
+        width: 100%;
+        height: auto;
+        max-height: 425px;
+        aspect-ratio: 1/1;
+    }
 }
 
 /* Tabs Styling */
